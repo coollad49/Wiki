@@ -1,0 +1,10 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block body %}
+    <h1 class="text-dark">{{title}}</h1>
+    {% for entry in entries %}
+        <div class="m-2 p-4">
+            <a href="{% url 'entree' entry %}"><h2 class="text-primary">{{entry}}</h1></a>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'encyclopedia/layout.html' %}
+{% load widget_tweaks %}
+
+{% block body %}
+    <h1>Create New Page</h1>
+    <form action="{% url 'newPage' %}" method="post">
+        {% csrf_token %}
+        <label for="" class="form-label text-primary">Title:</label>
+        {% render_field form.title class+="form-control" %}
+        <label for="" class="form-label mt-3 text-primary">Content:</label>
+        {% render_field form.textarea class+="form-control" %}
+        <input type="submit" value="Create" class="btn btn-outline-primary mt-4">
+    </form>
+{% endblock %}

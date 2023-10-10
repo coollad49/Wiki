@@ -1,0 +1,16 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block body %}
+    {% if check %}
+        <div class="text-dark bg-light">
+            {{entree|safe}}
+            <a href="{% url 'EditPage' title %}" class="">Edit page?</a>
+        </div>
+        
+    {% else %}
+        <div class="alert alert-warning">
+            <h1>Page Not Found</h1>
+        </div>
+    {% endif %}
+        
+{% endblock%}
